@@ -29,6 +29,9 @@ exec-db:
 login-mysql:
 	docker compose exec db mysql -u root -h localhost -P 3306 -D homestead -psecret
 
+mysqladmin-version:
+	docker compose exec db mysqladmin version --password=secret
+
 
 # Git
 
