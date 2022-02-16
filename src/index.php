@@ -7,7 +7,7 @@
         <h3>PDO Tutorial</h3>
         <?php
             try {
-                $pdo = new PDO('mysql:host=db;dbname=homestead;', 'root', 'secret');
+                $pdo = new PDO('mysql:host=db;dbname=homestead;port=3306', 'root', 'secret');
                 $result = $pdo->query('SELECT 1');
                 print_r($result);
             } catch (PDOException $e) {
