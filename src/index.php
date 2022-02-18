@@ -9,8 +9,12 @@
             try {
                 $pdo = new PDO('mysql:host=db;dbname=homestead;port=3306', 'root', 'secret');
                 $result = $pdo->query('SELECT * FROM users');
-                foreach ($result as $row) {
-                    print_r($row);
+                if ($result instanceof PDOStatement) {
+                    foreach ($result as $row) {
+                        print_r($row);
+                    }
+                } else {
+                    print_r($result);
                 }
             } catch (PDOException $e) {
                 echo $e->getMessage();
