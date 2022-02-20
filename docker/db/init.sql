@@ -7,3 +7,6 @@ CREATE TABLE IF NOT EXISTS homestead.users (
 ) ENGINE InnoDB DEFAULT CHARACTER SET utf8;
 
 INSERT INTO homestead.users SET name='Taro Yamada';
+INSERT INTO homestead.users SET name='Hanako Suzuki';
+INSERT INTO homestead.users SET name='Ichiro Kobayashi';
+INSERT INTO homestead.users SET name='Jiro Kobayashi';
