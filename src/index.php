@@ -19,6 +19,18 @@
                 background-color: rgb(0, 0, 0);
                 color: rgb(255, 255, 255);
             }
+            #submit-button {
+                display: inline-block;
+                margin-top: 1em;
+                padding: 0.5em;
+                border-radius: 0.25em;
+                background-color: rgb(0, 150, 255);
+            }
+            #submit-button a {
+                text-decoration: none;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
         </style>
     </head>
     <body>
@@ -48,5 +60,6 @@
                 exit();
             }
         ?>
+        <div id="submit-button"><a href="insert.php">新規レコード追加</a></div>
     </body>
 </html>
