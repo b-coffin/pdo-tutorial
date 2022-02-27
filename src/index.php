@@ -11,8 +11,13 @@
                 padding: 0.5em;
             }
 
-            table, td, th {
+            table, td {
                 border: solid;
+            }
+
+            th {
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
             }
         </style>
     </head>
