@@ -21,11 +21,20 @@
         <?php
             try {
                 $pdo = new PDO('mysql:host=db;dbname=homestead;port=3306', 'root', 'secret');
-                $result = $pdo->query('SELECT * FROM users');
-                if ($result instanceof PDOStatement) {
-                    print('<table><thead><tr><th>id</th><th>name</th></tr></thead><tbody>');
+                $result = $pdo->query('SELECT * FROM users')->fetchAll(PDO::FETCH_ASSOC);
+                $columns = $pdo->query('SHOW COLUMNS FROM users')->fetchAll(PDO::FETCH_COLUMN, 0);
+                if (is_array($result) && is_array($columns)) {
+                    print('<table><thead><tr>');
+                    foreach ($columns as $column) {
+                        print('<th>'.$column.'</th>');
+                    }
+                    print('</tr></thead><tbody>');
                     foreach ($result as $row) {
-                        print('<tr><td>'.$row['id'].'</td><td>'.$row['name'].'</td></tr>');
+                        print('<tr>');
+                        foreach ($row as $value) {
+                            print('<td>'.$value.'</td>');
+                        }
+                        print('</tr>');
                     }
                     print('</tbody></table>');
                 }
